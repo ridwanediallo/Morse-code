@@ -1,4 +1,5 @@
 def decode_char(code)
+<<<<<<< HEAD
   symbols = {
     '.-': 'A',
     '-...': 'B',
@@ -55,6 +56,8 @@ def decrypt(ciphered)
     sentence += decode_word(word) + ' '
   end
   puts sentence
+
+puts sentence
 end
 
 decrypt('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
