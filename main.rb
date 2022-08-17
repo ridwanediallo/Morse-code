@@ -1,5 +1,4 @@
 def decode_char(code)
-<<<<<<< HEAD
   symbols = {
     '.-': 'A',
     '-...': 'B',
