@@ -38,7 +38,7 @@ def decode_char(code)
 		'-----': '0'
 	}
 
-   symbols[code.to_sym]
+  symbols[code.to_sym]
 end
 
 
@@ -47,14 +47,14 @@ def decode_word(ciphered)
 	ciphered.split(' ').each do |code|
 		word += decode_char(code)
 	end
-    word
+  word
 end
 
 
 def decrypt(ciphered)
 	sentence = ''
 	ciphered.split('  ').each do |word|
-	   sentence += decode_word(word) + ' '
+	  sentence += decode_word(word) + ' '
 	end
 	puts sentence
 end
