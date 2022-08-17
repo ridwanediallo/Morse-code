@@ -1,4 +1,4 @@
-def find_symbol(code)
+def decode_char(code)
 	symbols = {
 		'.-': 'A',
 		'-...': 'B',
@@ -26,24 +26,38 @@ def find_symbol(code)
 		'-..-': 'X',
 		'-.--': 'Y',
 		'--..': 'Z',
-		'.----': 1,
-		'..---': 2,
-		'...--': 3,
-		'....-': 4,
-		'.....': 5,
-		'-....': 6,
-		'--...': 7,
-		'---..': 8,
-		'----.': 9,
-		'-----': 0
+		'.----': '1',
+		'..---': '2',
+		'...--': '3',
+		'....-': '4',
+		'.....': '5',
+		'-....': '6',
+		'--...': '7',
+		'---..': '8',
+		'----.': '9',
+		'-----': '0'
 	}
-	return symbols[code]
+
+   symbols[code.to_sym]
 end
 
-def decrypt(ciphered)
-	plain = ''
+
+def decode_word(ciphered)
+	word = ''
 	ciphered.split(' ').each do |code|
-		plain += find_symbol(code)
+		word += decode_char(code)
 	end
-	puts plain
+    word
 end
+
+
+def decrypt(ciphered)
+	sentence = ''
+	ciphered.split('  ').each do |word|
+	   sentence += decode_word(word) + ' '
+	end
+	puts sentence
+end
+
+decrypt('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+# prints out `A BOX FULL OF RUBIES`
