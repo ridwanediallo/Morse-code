@@ -52,11 +52,8 @@ end
 def decrypt(ciphered)
   sentence = ''
   ciphered.split('  ').each do |word|
-    # sentence += decode_word(word) + ' '
     sentence += "#{decode_word(word)} "
   end
-  puts sentence
-
   puts sentence
 end
 
